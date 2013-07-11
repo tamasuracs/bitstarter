@@ -57,7 +57,7 @@ var buildfn = function(htmlfile,checksfile) {
         if (result instanceof Error) {
             console.error('Error: ' + util.format(response.message));
         } else {
-            console.error("Wrote %s", htmlfile);
+  //          console.error("Wrote %s", htmlfile);
             fs.writeFileSync(htmlfile, result);
 			
 			checkHtmlFile(htmlfile, checksfile);			
@@ -85,7 +85,7 @@ var checkHtmlFileOrUrl = function(htmlfile, url, checksfile) {
 
 	if(url != null)
 	{
-		console.info("Loading url");
+//		console.info("Loading url");
 		var response2console = buildfn(htmlfile, checksfile);
 		rest.get(url).on('complete', response2console)
 	}
